@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     padding: 0px;
     font-family: Arial;
@@ -8,7 +8,7 @@ body{
     overflow-x: hidden;
 }
 
-#header{
+#header {
     border-bottom: 1px solid #666;
     color: #222;
     display: block;
@@ -17,37 +17,32 @@ body{
     background-image: -webkit-gradient(linear, left top, left bottom,
     from(#ccc), to(#999));
 }
-
-#header h1{
+#header h1 {
     text-shadow: 0px 1px 0px #fff;
     font-weight: 300;
     margin: 0px;
     padding: 10px;
     font-size: 25px;
 }
-
-.question{
+.question {
     font-size: 30px;
     margin: 0 5% 20px 5%;
 }
-
 .answers {
     margin-bottom: 20px;
     text-align: left;
     display: inline-block;
 }
 
-.answers label{
+.answers label {
     display: block;
     margin-bottom: 10px;
 }
 
-button p{
+button p {
     margin-top: -8px;
-    
 }
-    
-button{
+button {
     font-weight: 200;
     font-size: 20px;
     width: 300px;
@@ -59,15 +54,12 @@ button{
     background-image: -webkit-gradient(linear, left top, left bottom,
     from(#aaa), to(#888));
     margin-top: 15px;
-    
 }
-    
-button:hover{
+button:hover {
     background-image: -webkit-gradient(linear, left top, left bottom,
     from(#bbb), to(#999));
-    
 }
-.quiz-wrapper{
+.quiz-wrapper {
     position: relative;
     height: 200px;
     margin: 30px 0 60px 0;
@@ -76,7 +68,7 @@ button:hover{
     transform: scale(200%);
     margin: 0 30px 0 -20px;
 }
-#results{
+#results {
     margin-top: 15px;
     padding: 20px;
 }
@@ -101,7 +93,7 @@ button:hover{
     text-shadow: 0px 1px 0px #fff;
     background-image: -webkit-gradient(linear, left top, left bottom,
     from(#ccc), to(#999));
-    }
+}
 #footer h5{
     text-align: center;
     margin-top: 10px;
