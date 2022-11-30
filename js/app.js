@@ -24,8 +24,8 @@ function buildQuiz(){
 const questionBank = [];
 const newObject = localStorage.getItem("questionBank");
 let dataStored = JSON.parse(newObject);
-
-if(dataStored.length > 0){
+console.log(dataStored)
+if(dataStored != null){
     for(i=0; i < dataStored.length; i++){
         console.log(i);
         console.log(dataStored[i]);

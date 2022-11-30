@@ -29,7 +29,7 @@ function saveMyFile(){
 
 const newObject = localStorage.getItem("questionBank");
 let dataStored = JSON.parse(newObject);
-if(dataStored != null || dataStored == ""){
+if(dataStored != null){
     for(i=0; i < dataStored.length; i++){
         questionBank.push(dataStored[i]);
     }
