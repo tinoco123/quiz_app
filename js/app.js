@@ -1,7 +1,6 @@
 function buildQuiz(){
     const output = [];
-    myQuestions.forEach((currentQuestion, questionNumber) => {
-        console.log(questionNumber)
+    questionBank.forEach((currentQuestion, questionNumber) => {
         const answers = [];
         for(letter in currentQuestion.answers){
             answers.push(
@@ -12,7 +11,6 @@ function buildQuiz(){
                     ${currentQuestion.answers[letter]}
                 </label>`);
         }
-
         output.push(
             `<div class="slide">
                 <div class="question"> ${(questionNumber + 1)}. ${currentQuestion.question}</div>
@@ -22,14 +20,23 @@ function buildQuiz(){
     });
     quizBox.innerHTML = output.join('');
 }
-document.getElementById('quizLength').innerHTML = questions.length;
 
-// Recolectar preguntas
-const myQuestions = [];
+const questionBank = [];
+const newObject = localStorage.getItem("questionBank");
+let dataStored = JSON.parse(newObject);
 
-for(i = 0; i < questions.length; i++){
-    myQuestions.push(questions[i]);
+if(dataStored.length > 0){
+    for(i=0; i < dataStored.length; i++){
+        console.log(i);
+        console.log(dataStored[i]);
+        questionBank.push(dataStored[i]);
+    }
+}else {
+    for(i=0; i < questions.length; i++){
+        questionBank.push(questions[i]);
+    }
 }
+document.getElementById("quizLength").innerHTML = questionBank.length
 
 
 const quizBox = document.getElementById('quiz');
@@ -42,8 +49,6 @@ const nextButton = document.getElementById("next");
 const slides = document.querySelectorAll(".slide");
 let currentSlide = 0;
 showSlide(currentSlide);
-
-
 
 function showSlide(n) {
     slides[currentSlide].classList.remove('active-slide');
@@ -75,7 +80,7 @@ function showPreviousSlide() {
 function showResults(){
     const answerBoxs = quizBox.querySelectorAll('.answers');
     let numCorrect = 0;
-    myQuestions.forEach( (currentQuestion, questionNumber) => {
+    questionBank.forEach( (currentQuestion, questionNumber) => {
         const answerBox = answerBoxs[questionNumber];
         const selector = `input[name=question${questionNumber}]:checked`;
         const userAnswer = (answerBox.querySelector(selector) || {}).value;
@@ -87,9 +92,7 @@ function showResults(){
             answerBoxs[questionNumber].style.color = 'red';
         }
     });
-
-    resultsBox.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-
+    resultsBox.innerHTML = `${numCorrect} out of ${questionBank.length}`;
 }
 
 

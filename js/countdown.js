@@ -27,12 +27,11 @@ function initializeClock(id, endtime) {
     const timeinterval = setInterval(updateClock, 1000);
 }
 
-
 const deadline = new Date(Date.parse(new Date()) + 1 * 60 * 1000);
 const tryAgainButton = document.getElementById("tryAgain");
 initializeClock('clockdiv', deadline)
-
 tryAgainButton.addEventListener("click", resetQuiz);
+
 function resetQuiz(){
     location.reload();
 }
