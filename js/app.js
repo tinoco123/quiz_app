@@ -22,6 +22,7 @@ function buildQuiz(){
     });
     quizBox.innerHTML = output.join('');
 }
+document.getElementById('quizLength').innerHTML = questions.length;
 
 // Recolectar preguntas
 const myQuestions = [];
